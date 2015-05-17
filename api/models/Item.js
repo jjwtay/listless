@@ -7,8 +7,17 @@
 
 module.exports = {
 
-  attributes: {
-
-  }
+	attributes: {
+		name : {
+			type: 'string',
+			required: true,
+		},
+		list : {
+			model : 'list'
+		},
+		done : {
+			type: 'boolean'
+		}
+	}
 };
 

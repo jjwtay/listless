@@ -1,0 +1,11 @@
+<h1>{{user.username}}</h1>
+<h2>{{user.email}}</h2>
+<h3>Url: {{currentlist.url}}</h3>
+
+<input type="text" ng-model="newlist.name" placeholder="name"/>
+<button type='btn btn-default' ng-click="createlist()">Create list</button>
+<input type="text" ng-model="newitem.name" placeholder="Item name"/>
+<button type='btn btn-default' ng-click="addItem()">Add Item</button>
+<h3>Lists:</h3>
+<a ng-repeat="list in user.lists|urlFilter:currentlist" ng-click="setList(list)">{{list.name}}</a>
+<a ng-repeat="item in currentlist.items">{{item.name}}</a>

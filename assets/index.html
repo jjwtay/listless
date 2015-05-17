@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+
+<html  ng-app="listless">
+    <head>
+    	<!-- css start -->
+		<link rel="stylesheet" href="styles/bootstrap.min.css"/>
+    	<!-- css end   -->    
+    </head>
+    <body>
+		<nav class="navbar navbar-default" ng-controller="navbar">
+			<div class="container">
+				<form class='navbar-form navbar-right' ng-show="!user">
+					<input class='form-control' type='text' placeholder='email' ng-model="email"/>
+					<input class='form-control' type='password' placeholder='password' ng-model="password"/>
+					<button class='btn btn-default' ng-click="login()">Login</button>
+					<button class='btn btn-default' ng-click="register()">Join!</button>
+				</form>
+				<div class="btn-group navbar-right navbar-collapse dropdown" dropdown is-open="status.isopen" ng-show="user">
+					<button type="button" class="btn btn-primary dropdown-toggle" dropdown-toggle ng-disabled="disabled">{{user.username}}<span class="caret"></span>
+					</button>
+					<ul class="dropdown-menu" role="menu">
+						<li><a>Edit</a></li>
+						<li class="divider"></li>
+						<li><a ng-click="logout()">Logout</a></li>
+					</ul>
+				</div>				
+			</div>
+		</nav>
+        <div ui-view></div>
+
+
+        <!-- scripts start -->
+		<script src="js/dependencies/sails.io.js"></script>
+		
+		<script src="js/angular.min.js"></script>
+		<script src="js/angular-ui-router.js"></script>
+		<script src="js/ui-bootstrap-tpls-0.12.0.min.js"></script>
+		
+		
+		<script src="app/app.js"></script>
+		<script src="app/home/home.js"></script>
+		<script src="app/navbar/navbar.js"></script>
+		<script src="app/navbar/register/register.js"></script>
+		<script src="app/user/user.js"></script>
+		
+		<script src="app/services/user.js"></script>
+		<script src="app/services/list.js"></script>
+		<script src="app/services/item.js"></script>
+		
+		<script src="app/user/filters/listFilters.js"></script>
+        
+		<!-- scripts end   -->
+
+    </body>
+
+</html>

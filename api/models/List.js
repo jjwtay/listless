@@ -7,8 +7,24 @@
 
 module.exports = {
 
-  attributes: {
-
-  }
+	attributes: {
+		name: {
+			type: 'string',
+			required: true,
+			minLength: 3
+		},
+		url: {
+			type: 'string',
+			required: 'true'
+		},
+		user: {
+			model: 'user'	
+		},
+		items : {
+			collection : 'item',
+			via : 'list'
+		}
+		
+	}
 };
 
